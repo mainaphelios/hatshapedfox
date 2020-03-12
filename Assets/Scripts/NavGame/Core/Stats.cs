@@ -1,18 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System;
 
-public class Stats : MonoBehaviour
+namespace NavGame.Core
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    [Serializable]
+    public class Stats
     {
-        
-    }
+       public int maxHealth = 100;
+       public int damage = 10;
+       public int armor = 1;
+       public float attackSpeed = 1f; 
+
 }
+}
+
