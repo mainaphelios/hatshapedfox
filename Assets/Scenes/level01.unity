@@ -112,6 +112,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 23800000, guid: 55583f3978ddcb14bbd92a85d26338c7, type: 2}
+--- !u!1 &157130040
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157130041}
+  m_Layer: 0
+  m_Name: HealthPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &157130041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157130040}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 4.11, z: -0.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1463772366}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &321449121
 GameObject:
   m_ObjectHideFlags: 0
@@ -845,6 +875,7 @@ GameObject:
   - component: {fileID: 1463772368}
   - component: {fileID: 1463772367}
   - component: {fileID: 1463772369}
+  - component: {fileID: 1463772370}
   m_Layer: 0
   m_Name: Nexus
   m_TagString: Finish
@@ -864,6 +895,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1780965032}
+  - {fileID: 157130041}
   m_Father: {fileID: 1980593903}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -924,6 +956,21 @@ MonoBehaviour:
     damage: 10
     armor: 1
     attackSpeed: 1
+--- !u!114 &1463772370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463772365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a1e4a30ddbf85448a1841f1ed3f33de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthUiPrefab: {fileID: 3954959062756039248, guid: a75bdc8ebf3e79b4683d399a41dacf14,
+    type: 3}
+  healthPosition: {fileID: 157130041}
 --- !u!1 &1561992258
 GameObject:
   m_ObjectHideFlags: 0
