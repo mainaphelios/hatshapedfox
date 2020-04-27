@@ -1626,6 +1626,7 @@ GameObject:
   - component: {fileID: 515388167695298096}
   - component: {fileID: 536152142530535860}
   - component: {fileID: 536152142530535861}
+  - component: {fileID: 536152142530535862}
   m_Layer: 0
   m_Name: Infantry
   m_TagString: Untagged
@@ -1680,15 +1681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b59c4d233856a459cf4bd2cc916a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angularSpeed: 6
-  contactRadius: 0.5
-  ofenseStats:
-    damage: 10
-    attackSpeed: 1
-  attackRange: 4
-  enemyLayers:
-  - Creep
-  enemiesToAttack: []
 --- !u!114 &536152142530535861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1698,29 @@ MonoBehaviour:
   damageEffects: {fileID: 385601776049436197, guid: d2186f8027867ff43836b017a463bb78,
     type: 3}
   dieEffect: {fileID: 0}
+--- !u!114 &536152142530535862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536152142530535857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2af3b6a3b555d647a9da76839895f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angularSpeed: 6
+  contactRadius: 0.5
+  ofenseStats:
+    damage: 10
+    attackSpeed: 1
+  attackRange: 4
+  attackDelay: 0.5
+  castTransform: {fileID: 0}
+  enemyLayers:
+  - Creep
+  enemiesToAttack: []
 --- !u!54 &536152142530535868
 Rigidbody:
   m_ObjectHideFlags: 0
