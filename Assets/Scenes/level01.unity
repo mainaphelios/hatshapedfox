@@ -531,6 +531,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1010434616}
   - component: {fileID: 1010434617}
+  - component: {fileID: 1010434618}
   m_Layer: 12
   m_Name: Coin
   m_TagString: Untagged
@@ -566,6 +567,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1010434618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010434615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d91b910bc8be634fb563f0251ce17e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angularSpeed: 6
+  contactRadius: 0.5
+  amount: 1
+  pickupSound: coin-pickup
 --- !u!1 &1049599446
 GameObject:
   m_ObjectHideFlags: 0
@@ -798,7 +815,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105903688}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -1.93}
+  m_LocalPosition: {x: 0.04, y: 1, z: -1.93}
   m_LocalScale: {x: 0.6, y: 2, z: 0.6}
   m_Children:
   - {fileID: 1561992259}
@@ -1414,7 +1431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561992258}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.54999983, y: 0.274, z: 0.01}
+  m_LocalPosition: {x: 0.07, y: 0.274, z: 0.75}
   m_LocalScale: {x: 0.49999997, y: 0.15, z: 0.049999993}
   m_Children: []
   m_Father: {fileID: 1105903689}
