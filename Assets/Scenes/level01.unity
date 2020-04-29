@@ -946,7 +946,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1281608011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79aac7d2e13b26c4c9c715baafa4ed9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e799f23b43d29c44acc4c287cb0a29f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   angularSpeed: 6
@@ -974,8 +974,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b59c4d233856a459cf4bd2cc916a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_Name: 
 --- !u!195 &1281608014
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1569,7 +1567,6 @@ MonoBehaviour:
   walkableLayer:
     serializedVersion: 2
     m_Bits: 512
-  prefab: {fileID: 4746028147446959374, guid: 8bc18a1898868874dbfa9ea3da9d7e2c, type: 3}
 --- !u!195 &1743838953
 NavMeshAgent:
   m_ObjectHideFlags: 0
