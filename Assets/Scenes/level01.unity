@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 321449123}
   - component: {fileID: 321449122}
   - component: {fileID: 321449124}
+  - component: {fileID: 321449125}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -453,6 +454,22 @@ MonoBehaviour:
   badWaves: 3
   waitTimeFirstWave: 2
   waitTimeBetweenWaves: 4
+--- !u!114 &321449125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321449121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc3fec0caecea5b4aa429cd4de5947b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldownObjects:
+  - {fileID: 911741002}
+  - {fileID: 901745409}
+  - {fileID: 1471111933}
 --- !u!1 &460492021
 GameObject:
   m_ObjectHideFlags: 0
