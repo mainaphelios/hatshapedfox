@@ -21,6 +21,7 @@ namespace NavGame.Managers
         public OnActionCooldownUpdateEvent onActionCooldownUpdate;
         public OnResourceUpdateEvent onResourceUpdate;
         public OnReportableErrorEvent onReportableError;
+        public OnWaveUpdateEvent onWaveUpdate;
 
         protected int selectedAction = -1;
         protected LevelData levelData = new LevelData();
@@ -37,7 +38,7 @@ namespace NavGame.Managers
             }
         }
 
-        void Start()
+        protected virtual void Start()
         {
             StartCoroutine(SpawnBad());
         }
