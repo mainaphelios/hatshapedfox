@@ -20,6 +20,7 @@ namespace NavGame.Managers
         public OnActionCancelEvent onActionCancel;
         public OnActionCooldownUpdateEvent onActionCooldownUpdate;
         public OnResourceUpdateEvent onResourceUpdate;
+        public OnReportableErrorEvent onReportableError;
 
         protected int selectedAction = -1;
         protected LevelData levelData = new LevelData();
@@ -53,6 +54,9 @@ namespace NavGame.Managers
 
         public virtual void SelectAction(int actionIndex)
         {
+            try
+            { 
+            levelData.ValidateCoinAmount(actions[actionIndex].cost);
             if (actions[actionIndex].coolDown > 0)
             {
                 AudioManager.instance.Play(errorSound, PlayerManager.instance.GetPlayer().transform.position);
@@ -64,15 +68,40 @@ namespace NavGame.Managers
             {
                 onActionSelect(actionIndex);
             }
+            }
+            catch (InvalidOperationException e)
+            {
+                AudioManager.instance.Play(errorSound, PlayerManager.instance.GetPlayer().transform.position);
+                if (onReportableError != null )
+                {
+                    onReportableError(e.Message);
+                }
+            }
         }
 
         public virtual void DoAction(Vector3 point)
         {
-            Instantiate(actions[selectedAction].prefab, point, Quaternion.identity);
-            int index = selectedAction;
-            selectedAction = -1;
-            StartCoroutine(ProcessCooldown(index));
-    }
+            try
+            {
+                levelData.ConsumeCoins(actions[selectedAction].cost);
+                Instantiate(actions[selectedAction].prefab, point, Quaternion.identity);
+                if (onResourceUpdate != null)
+                {
+                    onResourceUpdate(levelData.CoinCount);
+                }
+                int index = selectedAction;
+                selectedAction = -1;
+                StartCoroutine(ProcessCooldown(index));
+            }
+            catch (InvalidOperationException e)
+            {
+                AudioManager.instance.Play(errorSound, PlayerManager.instance.GetPlayer().transform.position);
+                if (onReportableError != null)
+                {
+                    onReportableError(e.Message);
+                }
+            }
+        }
 
         public virtual void CancelAction()
         {
