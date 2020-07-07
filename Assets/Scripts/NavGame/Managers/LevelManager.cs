@@ -24,6 +24,7 @@ namespace NavGame.Managers
         public OnWaveUpdateEvent onWaveUpdate;
         public OnWaveCountdownEvent onWaveCountdown;
         public OnDefeatEvent onDefeat;
+        public OnVictoryEvent onVictory;
 
         public bool isPaused { get; private set; } = false; 
 
@@ -54,6 +55,7 @@ namespace NavGame.Managers
 
         protected virtual void Start()
         {
+            AddResource(12);
             StartCoroutine(SpawnBad());
         }
 
@@ -163,6 +165,16 @@ namespace NavGame.Managers
                 onDefeat(); 
             }
         }
+
+        protected void EmitVictoryEvent()
+        {
+            if (onVictory != null)
+            {
+                onVictory();
+            }
+        }
+
+
 
         public void Pause()
         {

@@ -7,7 +7,8 @@ using NavGame.Managers;
 public class UIManager : MonoBehaviour
 {
     public GameObject errorPanel;
-    public GameObject defeatPanel; 
+    public GameObject defeatPanel;
+    public GameObject victoryPanel;
     public Text errorText;
     public float errorTime = 1.5f;
 
@@ -31,6 +32,7 @@ public class UIManager : MonoBehaviour
         LevelManager.instance.onWaveUpdate += OnWaveUpdate;
         LevelManager.instance.onWaveCountdown += OnWaveCountdown;
         LevelManager.instance.onDefeat += OnDefeat;
+        LevelManager.instance.onVictory += OnVictory;
     }
 
     void Start()
@@ -94,6 +96,12 @@ public class UIManager : MonoBehaviour
     {
         LevelManager.instance.Pause();
         defeatPanel.SetActive(true);
+    }
+
+    void OnVictory()
+    {
+        LevelManager.instance.Pause();
+        victoryPanel.SetActive(true);
     }
 
     public void OnBtRealoadClick ()
